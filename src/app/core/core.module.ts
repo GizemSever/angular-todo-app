@@ -1,6 +1,6 @@
-import {NgModule} from '@angular/core';
+import {ModuleWithProviders, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
+import {TranslateLoader, TranslateModule, TranslatePipe} from "@ngx-translate/core";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {environment} from "../../environments/environment";
@@ -15,16 +15,17 @@ export function HttpLoaderFactory(http: HttpClient) {
   imports: [
     CommonModule,
     HttpClientModule,
-    TranslateModule.forRoot({
+    TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
-      }
+      },
+      isolate: false
     })
   ],
   exports: [
-    TranslateModule,
+    TranslateModule
   ]
 })
 export class CoreModule {
@@ -32,5 +33,10 @@ export class CoreModule {
     private translateService: AppTranslateService
   ) {
     this.translateService.init(environment.defaultLanguage)
+  }
+  static forRoot(): ModuleWithProviders<any> {
+    return {
+      ngModule: CoreModule
+    }
   }
 }

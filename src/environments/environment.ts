@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   i18nPrefix: ``,
-  defaultLanguage: `en`
+  defaultLanguage: `en`,
+  api: ''
 };
 
 /*
