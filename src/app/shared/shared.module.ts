@@ -7,6 +7,10 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatCardModule} from "@angular/material/card";
 import {MatCommonModule} from "@angular/material/core";
 import {ReactiveFormsModule} from "@angular/forms";
+import {MatMenuModule} from "@angular/material/menu";
+import {MatIconModule} from "@angular/material/icon";
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 
 @NgModule({
@@ -20,6 +24,10 @@ import {ReactiveFormsModule} from "@angular/forms";
     MatInputModule,
     MatButtonModule,
     MatCardModule,
+    MatMenuModule,
+    MatIconModule,
+    MatDialogModule,
+    MatSnackBarModule
   ],
   exports: [
     ReactiveFormsModule,
@@ -28,7 +36,11 @@ import {ReactiveFormsModule} from "@angular/forms";
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatMenuModule,
+    MatIconModule,
+    MatDialogModule,
+    MatSnackBarModule
   ]
 })
 export class SharedModule {
