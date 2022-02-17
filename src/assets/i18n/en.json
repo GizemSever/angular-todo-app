@@ -13,5 +13,7 @@
   "project_name": "Project Name",
   "create": "Create",
   "register_success": "Your registration has been successfully created.",
-  "register_fail": "An error occurred while registration."
+  "register_fail": "An error occurred while registration.",
+  "login_success": "Successfully",
+  "login_error": "Please check the information you entered"
 }
