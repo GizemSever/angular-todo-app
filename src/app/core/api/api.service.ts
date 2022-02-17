@@ -15,7 +15,7 @@ export abstract class ApiService {
   }
 
   protected post(url: string, data: object): Observable<ApiResponse<any>> {
-    return this.httpClient.post<ApiResponse<any>>(`${environment.api}/api/${url}`, data);
+    return this.httpClient.post<ApiResponse<any>>(`${environment.api}${url}`, data);
   }
 
 }

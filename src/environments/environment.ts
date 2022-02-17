@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   i18nPrefix: ``,
   defaultLanguage: `en`,
-  api: ''
+  api: 'http://localhost:80/api/v1/'
 };
 
 /*
