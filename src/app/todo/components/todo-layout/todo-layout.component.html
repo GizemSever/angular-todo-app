@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-12 teal lighten-2">
+    <button [matMenuTriggerFor]="menu" class="todo-top-menu-options-btn" mat-icon-button>
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" class="todo-top-menu">
+      <button mat-menu-item>
+        <mat-icon>forward</mat-icon>
+        <span>
+      {{ 'logout' | translate }}
+    </span>
+      </button>
+    </mat-menu>
+  </div>
+
+  <div class="col-12">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+

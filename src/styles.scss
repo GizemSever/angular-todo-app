@@ -52,3 +52,18 @@ body {
   background-color: #424242;
 }
 
+mat-card.project-card{
+  margin-top: 20px;
+  cursor: pointer;
+
+  .project-card-title{
+    color: #29b6f6;
+  }
+
+  .project-date{
+      font-size: 10px;
+      color: #aaaaaa;
+      display: block;
+      line-height: 10px;
+  }
+}
