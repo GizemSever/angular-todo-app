@@ -13,10 +13,13 @@ export class AuthService extends ApiService {
     return this.post(`register`, registerData);
   }
 
-  login(email: string, password: string): Observable<ApiResponse<{ user: User, token: string }>> {
-    return this.post(`login`, {
-      email,
-      password
-    });
+  login(loginData: { email: string, password: string }): Observable<ApiResponse<{ user: User, token: string }>> {
+    return this.post(`login`, loginData);
   }
+
+  user(): Observable<ApiResponse<User>> {
+    return this.get(`user`);
+  }
+
+
 }
