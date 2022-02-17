@@ -21,4 +21,9 @@ export class LocalStorageService {
   removeItem(key: string): void {
     localStorage.removeItem(`${APP_PREFIX}${key}`);
   }
+
+  has(key: string): boolean {
+    const item = localStorage.getItem(`${APP_PREFIX}${key}`);
+    return (item !== null);
+  }
 }
