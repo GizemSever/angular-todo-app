@@ -6,10 +6,11 @@ import { AuthLayoutComponent } from './components/auth-layout/auth-layout.compon
 import {SharedModule} from "../shared/shared.module";
 import {CoreModule} from "../core/core.module";
 import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
-  declarations: [AuthLayoutComponent, RegisterComponent],
+  declarations: [AuthLayoutComponent, RegisterComponent, LoginComponent],
   imports: [
     CommonModule,
     CoreModule,

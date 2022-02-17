@@ -9,8 +9,8 @@ import {User} from "../../models/user/user.model";
 })
 export class AuthService extends ApiService {
 
-  register(): Observable<ApiResponse<{ user: User, token: string }>> {
-    return this.post(`register`, {});
+  register(registerData: { name: string, surname: string, password: string, email: string }): Observable<ApiResponse<{ user: User, token: string }>> {
+    return this.post(`register`, registerData);
   }
 
   login(email: string, password: string): Observable<ApiResponse<{ user: User, token: string }>> {
