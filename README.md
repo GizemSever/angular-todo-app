@@ -1,6 +1,6 @@
 # TodoApp
 
-###You must install [the backend project](https://github.com/GizemSever/todo-laravel-api) before running this project.
+### You must install [the backend project](https://github.com/GizemSever/todo-laravel-api) before running this project.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.1.
 
