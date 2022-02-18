@@ -20,5 +20,7 @@
   "task_title": "Task Title",
   "task_description": "Task Description",
   "save": "Save",
-  "completed_at": "Completed at: "
+  "completed_at": "Completed at: ",
+  "update_task": "Set Task",
+  "project_removed": "Project removed!"
 }
