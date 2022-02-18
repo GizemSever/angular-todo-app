@@ -12,7 +12,7 @@
       </mat-card>
     </div>
     <ng-container *ngFor="let p of projects;">
-      <div class="col">
+      <div class="col" (click)="navigateProjectDetail(p)" >
         <mat-card class="project-card">
           <mat-card-content class="text-center">
         <span class="project-card-title">

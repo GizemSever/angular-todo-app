@@ -7,10 +7,12 @@ import {SharedModule} from "../shared/shared.module";
 import { ProjectsComponent } from './components/projects/projects.component';
 import { TodoLayoutComponent } from './components/todo-layout/todo-layout.component';
 import { CreateProjectComponent } from './components/create-project/create-project.component';
+import { BoardComponent } from './components/board/board.component';
+import { ProjectDetailComponent } from './components/project-detail/project-detail.component';
 
 
 @NgModule({
-  declarations: [ProjectsComponent, TodoLayoutComponent, CreateProjectComponent],
+  declarations: [ProjectsComponent, TodoLayoutComponent, CreateProjectComponent, BoardComponent, ProjectDetailComponent],
   imports: [
     CommonModule,
     CoreModule,

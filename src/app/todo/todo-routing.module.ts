@@ -1,7 +1,8 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {TodoLayoutComponent} from "./components/todo-layout/todo-layout.component";
-import {ProjectsComponent} from "./components/projects/projects.component";
+import {TodoLayoutComponent} from './components/todo-layout/todo-layout.component';
+import {ProjectsComponent} from './components/projects/projects.component';
+import {ProjectDetailComponent} from './components/project-detail/project-detail.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
       {
         path: 'projects',
         component: ProjectsComponent
+      },
+      {
+        path: 'project/:id',
+        component: ProjectDetailComponent
       }
     ]
   }
