@@ -25,4 +25,8 @@ export abstract class ApiService {
   protected delete(url: string, data: object = {}): Observable<ApiResponse<any> | any> {
     return this.httpClient.delete<ApiResponse<any> | any>(`${environment.api}${url}`, data);
   }
+
+  protected put(url: string, data: object = {}): Observable<ApiResponse<any>> {
+    return this.httpClient.put<ApiResponse<any>>(`${environment.api}${url}`, data);
+  }
 }

@@ -9,13 +9,16 @@ import { TodoLayoutComponent } from './components/todo-layout/todo-layout.compon
 import { CreateProjectComponent } from './components/create-project/create-project.component';
 import { BoardComponent } from './components/board/board.component';
 import { ProjectDetailComponent } from './components/project-detail/project-detail.component';
+import { UpsertTaskComponent } from './components/upsert-task/upsert-task.component';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
-  declarations: [ProjectsComponent, TodoLayoutComponent, CreateProjectComponent, BoardComponent, ProjectDetailComponent],
+  declarations: [ProjectsComponent, TodoLayoutComponent, CreateProjectComponent, BoardComponent, ProjectDetailComponent, UpsertTaskComponent],
   imports: [
     CommonModule,
     CoreModule,
+    FormsModule,
     SharedModule,
     TodoRoutingModule
   ]

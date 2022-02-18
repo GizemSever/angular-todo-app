@@ -1,4 +1,5 @@
 import {BoardType} from './board-type.enum';
+import {Task} from '../task/task.model';
 
 export class Board {
 
@@ -8,7 +9,8 @@ export class Board {
     public name: string,
     public type?: BoardType,
     public created_at?: Date,
-    public updated_at?: Date
+    public updated_at?: Date,
+    public tasks?: Task[]
   ) {
   }
 }

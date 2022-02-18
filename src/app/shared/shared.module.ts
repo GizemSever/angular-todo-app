@@ -11,6 +11,7 @@ import {MatMenuModule} from "@angular/material/menu";
 import {MatIconModule} from "@angular/material/icon";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     MatMenuModule,
     MatIconModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    DragDropModule
   ],
   exports: [
     ReactiveFormsModule,
@@ -40,7 +42,8 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     MatMenuModule,
     MatIconModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    DragDropModule
   ]
 })
 export class SharedModule {

@@ -1,10 +1,53 @@
-<div class="row">
-  <ng-template [ngIf]="project">
+<ng-template [ngIf]="project">
+  <div class="row">
     <div class="col">
       {{ project.name | uppercase }}
       <button (click)="removeProject()" aria-label="" color="warn" mat-mini-fab>
         <mat-icon>delete</mat-icon>
       </button>
     </div>
-  </ng-template>
-</div>
+  </div>
+
+  <div class="row">
+    <ng-container *ngFor="let board of boards;">
+      <div class="col board-container">
+        <h4 class="board-title">
+          {{ boardTitle(board) }}
+        </h4>
+        <mat-card>
+          <mat-card-content>
+            <button (click)="createTask(board)" mat-button>
+              {{ 'create_task' | translate }}
+            </button>
+          </mat-card-content>
+        </mat-card>
+        <div
+          (cdkDropListDropped)="drop($event)"
+          [cdkDropListConnectedTo]="connectedBoards(board)"
+          [cdkDropListData]="board.tasks"
+          [cdkDropListSortingDisabled]="true"
+          [id]="'dropList-' + board.id"
+          cdkDropList
+          class="example-list col">
+          <div *ngFor="let item of board.tasks" cdkDrag class="example-box">
+
+            <div class="task-content" (click)="setData(item, board)" >
+              {{item.title}}
+            </div>
+
+            <div cdkDragHandle class="task-handle">
+              <mat-icon>drag_indicator</mat-icon>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </ng-container>
+
+
+  </div>
+</ng-template>
+
+
+

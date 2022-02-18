@@ -4,13 +4,16 @@ import {Observable} from 'rxjs';
 import {Project} from '../../models/project/project.model';
 import {ApiResponse} from '../../models/api/api-response.model';
 import {Board} from '../../models/board/board.model';
+import {Task} from '../../models/task/task.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoService extends ApiService {
+
   private projects = 'projects';
   private boards = `boards`;
+  private tasks = 'tasks';
 
   createProject(project: Project): Observable<ApiResponse<Project>> {
     return this.post(`${this.projects}`, project);
@@ -30,5 +33,17 @@ export class TodoService extends ApiService {
 
   deleteProject(projectId: number): Observable<any> {
     return this.delete(`${this.projects}/${projectId}`);
+  }
+
+  listTasks(projectId: number, boardId: number): Observable<ApiResponse<Task[]>> {
+    return this.get(`${this.projects}/${projectId}/${this.boards}/${boardId}/${this.tasks}`);
+  }
+
+  createTask(projectId: number, boardId: number, task: Task): Observable<ApiResponse<Task>> {
+    return this.post(`${this.projects}/${projectId}/${this.boards}/${boardId}/${this.tasks}`, task);
+  }
+
+  setTask(projectId: number, boardId: number, task: Task): Observable<ApiResponse<Task>> {
+    return this.put(`${this.projects}/${projectId}/${this.boards}/${boardId}/${this.tasks}/${task.id}`, task);
   }
 }

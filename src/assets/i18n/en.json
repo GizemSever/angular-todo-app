@@ -15,5 +15,9 @@
   "register_success": "Your registration has been successfully created.",
   "register_fail": "An error occurred while registration.",
   "login_success": "Successfully",
-  "login_error": "Please check the information you entered"
+  "login_error": "Please check the information you entered",
+  "create_task": "Create Task",
+  "task_title": "Task Title",
+  "task_description": "Task Description",
+  "save": "Save"
 }
