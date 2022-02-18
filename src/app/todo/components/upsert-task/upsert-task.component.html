@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>
+  <ng-template [ngIfElse]="setTask" [ngIf]="data.isCreateMode">
+    {{ 'create_task' | translate }}
+  </ng-template>
+  <ng-template #setTask>
+    {{ 'update_task' | translate }}
+  </ng-template>
+</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>
+      {{ 'task_title' | translate }}
+    </mat-label>
+    <input [(ngModel)]="data.task.title" matInput>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>
+      {{ 'task_description' | translate }}
+    </mat-label>
+    <textarea [(ngModel)]="data.task.description" matInput></textarea>
+  </mat-form-field>
+
+  <button mat-button color="primary" (click)="save()" [disabled]="data.task.title.length <= 0" >
+    {{ 'save' | translate }}
+  </button>
+</div>

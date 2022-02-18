@@ -1,0 +1,12 @@
+<form [formGroup]="createProjectForm" (ngSubmit)="createProject()" >
+  <mat-form-field>
+    <label>
+      {{ 'project_name' | translate }}
+    </label>
+    <input matInput formControlName="name" type="text">
+  </mat-form-field>
+
+  <button mat-raised-button type="submit" [disabled]="createProjectForm.invalid" >
+    {{ 'create' | translate }}
+  </button>
+</form>

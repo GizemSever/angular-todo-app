@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row flex">
+    <div class="col">
+      <mat-card class="project-card">
+        <mat-card-content class="text-center">
+          <button (click)="openDialog()" class="full-width" mat-button>
+          <span class="project-card-title">
+        {{ 'create_new_project' | translate }}
+      </span>
+          </button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <ng-container *ngFor="let p of projects;">
+      <div class="col" (click)="navigateProjectDetail(p)" >
+        <mat-card class="project-card">
+          <mat-card-content class="text-center">
+        <span class="project-card-title">
+          {{ p.name }}
+        </span>
+            <span class="project-date right">
+              {{ p.created_at | date:'fullDate' }}
+            </span>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </ng-container>
+  </div>
+
+</div>

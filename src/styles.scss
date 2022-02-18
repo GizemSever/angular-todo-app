@@ -1,4 +1,69 @@
 /* You can add global styles to this file, and also import other style files */
+// MDB SCSS
+@import "~mdb-angular-ui-kit/assets/scss/mdb.scss";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.auth-form {
+  display: grid;
+}
+
+.todo-top-menu-options-btn {
+  float: right;
+}
+
+.todo-top-menu {
+  background: var(mat-col);
+}
+
+
+.todo-snackbar.success {
+  background-color: #43a047;
+}
+
+.todo-snackbar.warning {
+  background-color: #ffa000;
+}
+
+.todo-snackbar.info {
+  background-color: #29b6f6;
+}
+
+.todo-snackbar.danger {
+  background-color: #b71c1c;
+}
+
+.todo-snackbar.dark {
+  background-color: #424242;
+}
+
+mat-card.project-card{
+  margin-top: 20px;
+  cursor: pointer;
+
+  .project-card-title{
+    color: #29b6f6;
+  }
+
+  .project-date{
+      font-size: 10px;
+      color: #aaaaaa;
+      display: block;
+      line-height: 10px;
+  }
+}
