@@ -8,6 +8,7 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 import {Task} from '../../../models/task/task.model';
 import {MatDialog} from '@angular/material/dialog';
 import {UpsertTaskComponent, UpsertTaskData} from '../upsert-task/upsert-task.component';
+import {BoardType} from '../../../models/board/board-type.enum';
 
 @Component({
   selector: 'app-project-detail',
@@ -19,11 +20,6 @@ export class ProjectDetailComponent implements OnInit {
   private id: number;
   public project: Project;
   public boards: Board[] = [];
-  public selectedTask?: Task;
-
-  todo = ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep'];
-
-  done = ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog'];
 
   constructor(
     public dialog: MatDialog,
@@ -98,18 +94,23 @@ export class ProjectDetailComponent implements OnInit {
       });
   }
 
-  drop(event: CdkDragDrop<Task[]>): void {
-    console.log(event);
+  drop(event: CdkDragDrop<Task[]>, toBoardId: number): void {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
-      console.log(event);
-      transferArrayItem(
-        event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex,
-      );
+      const draggedTask = event.previousContainer.data[event.previousIndex];
+      const previousBoardId = draggedTask.board_id;
+      draggedTask.board_id = toBoardId;
+      this.todoService.setTask(this.id, previousBoardId, draggedTask)
+        .subscribe(data => {
+          event.previousContainer.data[event.previousIndex] = data.data;
+          transferArrayItem(
+            event.previousContainer.data,
+            event.container.data,
+            event.previousIndex,
+            event.currentIndex,
+          );
+        });
     }
   }
 
@@ -140,4 +141,14 @@ export class ProjectDetailComponent implements OnInit {
     });
   }
 
+  isCompleted(board: Board): boolean {
+    return (board.type === BoardType.DONE);
+  }
+
+  deleteTask(task: Task, board: Board, index: number): void {
+    this.todoService.deleteTask(this.id, task)
+      .subscribe(data => {
+        board.tasks.splice(index, 1);
+      });
+  }
 }

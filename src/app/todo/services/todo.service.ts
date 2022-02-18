@@ -46,4 +46,8 @@ export class TodoService extends ApiService {
   setTask(projectId: number, boardId: number, task: Task): Observable<ApiResponse<Task>> {
     return this.put(`${this.projects}/${projectId}/${this.boards}/${boardId}/${this.tasks}/${task.id}`, task);
   }
+
+  deleteTask(projectId: number, task: Task): Observable<any> {
+    return this.delete(`${this.projects}/${projectId}/${this.boards}/${task.board_id}/${this.tasks}/${task.id}`);
+  }
 }

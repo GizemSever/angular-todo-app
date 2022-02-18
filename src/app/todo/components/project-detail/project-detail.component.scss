@@ -56,3 +56,13 @@
   float: right;
   cursor: move;
 }
+
+.task-completed-date{
+  display: block;
+  font-size: 10px;
+}
+
+.task-delete-btn{
+  right: 0px;
+  position: relative;
+}

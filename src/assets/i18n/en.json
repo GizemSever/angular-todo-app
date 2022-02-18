@@ -19,5 +19,6 @@
   "create_task": "Create Task",
   "task_title": "Task Title",
   "task_description": "Task Description",
-  "save": "Save"
+  "save": "Save",
+  "completed_at": "Completed at: "
 }

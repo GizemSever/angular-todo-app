@@ -38,7 +38,8 @@ export class UpsertTaskComponent implements OnInit {
 
     taskAction.subscribe(data => {
       this.data.task = data.data;
+      this.dialogRef.close(this.data);
     });
-    this.dialogRef.close(this.data);
+
   }
 }
